@@ -1,7 +1,7 @@
 import telebot
 
 
-bot = telebot.TeleBot('6419841809:AAFEiToc-LKefUbh7nkzEiusYGnHgA0NAK8')
+bot = telebot.TeleBot('6034305301:AAFCiWFQoMQIIee5x2kT62zQJsSXFtyRKSk')
 
 
 @bot.message_handler(commands=['start'])
@@ -11,5 +11,5 @@ def test(message_):
 
 
 def send_message(key, event):
-    def error_message(text):
-        bot.send_message(674796107, f'Итерация была прервана из-за ошибки: {text}')
+    text, link = event[0], event[1]
+    bot.send_message(674796107, f'На сайте {key} обновление: \n {text}\n{link}')
