@@ -12,4 +12,9 @@ def test(message_):
 
 def send_message(key, event):
     text, link = event[0], event[1]
-    bot.send_message(674796107, f'На сайте {key} обновление: \n {text}\n{link}')
+    bot.send_message(674796107, f'{key}\n {text}\n{link}')
+
+
+def error_message(site_name, error_name):
+    bot.send_message(674796107, f'При парсинге {site_name} произошла ошибка: \n {error_name}')
+

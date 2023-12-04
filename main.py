@@ -4,7 +4,7 @@ import time
 
 from scrapper import moscow_kamin_scr, flammen_gmbh_scr, schmid_scr, schiedel_scr, belfortkamin_scr, \
     lit_kom_scr, ecokamin_scr, kamin_sklad_scr, easysteam_scr, prometall_scr, pkferrum_scr
-from tg_master import send_message
+from tg_master import send_message, error_message
 
 
 def main():
@@ -15,10 +15,52 @@ def main():
     else:
         dict_stock = {}
 
-    moscow_kamin_list, flammen_gmbh_list, schmid_list = moscow_kamin_scr(), flammen_gmbh_scr(), schmid_scr()
-    schiedel_list, belfortkamin_list = schiedel_scr(), belfortkamin_scr()
-    lit_kom_list, ecokamin_list, kamin_sklad_list = lit_kom_scr(), ecokamin_scr(), kamin_sklad_scr()
-    easysteam_list, prometall_list, pkferrum_list = easysteam_scr(), prometall_scr(), pkferrum_scr()
+
+    try:
+        moscow_kamin_list = moscow_kamin_scr()
+    except Exception as e:
+        error_message('moscow_kamin', e)
+    try:
+        flammen_gmbh_list = flammen_gmbh_scr()
+    except Exception as e:
+        error_message('flammen_gmbh', e)
+    try:
+        schmid_list = schmid_scr()
+    except Exception as e:
+        error_message('schmid', e)
+    try:
+        schiedel_list = schiedel_scr()
+    except Exception as e:
+        error_message('schiedel', e)
+    try:
+        belfortkamin_list = belfortkamin_scr()
+    except Exception as e:
+        error_message('belfortkamin', e)
+    try:
+        lit_kom_list = lit_kom_scr()
+    except Exception as e:
+        error_message('lit_kom', e)
+    try:
+        ecokamin_list = ecokamin_scr()
+    except Exception as e:
+        error_message('ecokamin', e)
+    try:
+        kamin_sklad_list = kamin_sklad_scr()
+    except Exception as e:
+        error_message('kamin_sklad', e)
+    try:
+        easysteam_list = easysteam_scr()
+    except Exception as e:
+        error_message('easysteam', e)
+    try:
+        prometall_list = prometall_scr()
+    except Exception as e:
+        error_message('prometall', e)
+    try:
+        pkferrum_list = pkferrum_scr()
+    except Exception as e:
+        error_message('epkferrum', e)
+
 
     dict_stock_current = {
         'flammen-gmbh.ru': flammen_gmbh_list, 'schmid.ru': schmid_list, 'moscow.kamin.ru': moscow_kamin_list,
@@ -43,6 +85,7 @@ def main():
 
 
 if __name__ == "__main__":
+    print('Программа работает стабильно...')
     main()
     time.sleep(86400)
 

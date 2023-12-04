@@ -113,7 +113,7 @@ def schiedel_scr():
     news_block = soup.find_all('article', class_='mk-blog-modern-item')
     for block in news_block:
         text = block.find('h3', {'class': 'the-title'}).get_text(strip=True)
-        link = 'https://schiedel.com.ru' + block.find('h3', {'class': 'the-title'}).a['href']
+        link = block.find('h3', {'class': 'the-title'}).a['href']
 
         schiedel_list.append([text, link])
 
