@@ -10,6 +10,10 @@ def test(message_):
     bot.reply_to(message_, f"Your chat ID is: {chat_id}")
 
 
+def check_message():
+    bot.send_message(674796107, f'Проверка')
+
+
 def send_message(key, event):
     text, link = event[0], event[1]
     bot.send_message(674796107, f'{key}\n {text}\n{link}')

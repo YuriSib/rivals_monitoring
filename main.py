@@ -4,7 +4,7 @@ import time
 
 from scrapper import moscow_kamin_scr, flammen_gmbh_scr, schmid_scr, schiedel_scr, belfortkamin_scr, \
     lit_kom_scr, ecokamin_scr, kamin_sklad_scr, easysteam_scr, prometall_scr, pkferrum_scr
-from tg_master import send_message, error_message
+from tg_master import send_message, error_message, check_message
 
 
 def main():
@@ -85,7 +85,8 @@ def main():
 
 
 if __name__ == "__main__":
-    print('Программа работает стабильно...')
-    main()
-    time.sleep(86400)
+    # print('Программа работает стабильно...')
+    # main()
+    # time.sleep(86400)
+    check_message()
 
