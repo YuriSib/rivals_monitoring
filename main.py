@@ -21,46 +21,57 @@ def main():
         moscow_kamin_list = moscow_kamin_scr()
     except Exception as e:
         error_message('moscow_kamin', e)
+        print(e)
     try:
         flammen_gmbh_list = flammen_gmbh_scr()
     except Exception as e:
         error_message('flammen_gmbh', e)
+        print(e)
     try:
         schmid_list = schmid_scr()
     except Exception as e:
         error_message('schmid', e)
+        print(e)
     try:
         schiedel_list = schiedel_scr()
     except Exception as e:
         error_message('schiedel', e)
+        print(e)
     try:
         belfortkamin_list = belfortkamin_scr()
     except Exception as e:
         error_message('belfortkamin', e)
+        print(e)
     try:
         lit_kom_list = lit_kom_scr()
     except Exception as e:
         error_message('lit_kom', e)
+        print(e)
     try:
         ecokamin_list = ecokamin_scr()
     except Exception as e:
         error_message('ecokamin', e)
+        print(e)
     try:
         kamin_sklad_list = kamin_sklad_scr()
     except Exception as e:
         error_message('kamin_sklad', e)
+        print(e)
     try:
         easysteam_list = easysteam_scr()
     except Exception as e:
         error_message('easysteam', e)
+        print(e)
     try:
         prometall_list = prometall_scr()
     except Exception as e:
         error_message('prometall', e)
+        print(e)
     try:
         pkferrum_list = pkferrum_scr()
     except Exception as e:
         error_message('epkferrum', e)
+        print(e)
 
 
     dict_stock_current = {
@@ -95,6 +106,8 @@ def wait_until_morning():
 
 
 if __name__ == "__main__":
-    while True:
-        main()
-        wait_until_morning()
+    check_message()
+    # while True:
+    #     print('Итерация запущена!')
+    #     main()
+    #     wait_until_morning()
