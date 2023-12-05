@@ -85,8 +85,8 @@ def main():
 
 
 if __name__ == "__main__":
-    # print('Программа работает стабильно...')
-    # main()
-    # time.sleep(86400)
-    check_message()
+    print('Программа работает стабильно...')
+    main()
+    time.sleep(86400)
+
 
