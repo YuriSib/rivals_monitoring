@@ -1,5 +1,6 @@
 import pickle
 from pathlib import Path
+import datetime
 import time
 
 from scrapper import moscow_kamin_scr, flammen_gmbh_scr, schmid_scr, schiedel_scr, belfortkamin_scr, \
@@ -84,9 +85,16 @@ def main():
                 time.sleep(5)
 
 
+def wait_until_morning():
+    current_time = datetime.datetime.now()
+    target_time = datetime.datetime(current_time.year, current_time.month, current_time.day, 9, 0, 0)
+
+    while current_time < target_time:
+        current_time = datetime.datetime.now()
+        time.sleep(30)
+
+
 if __name__ == "__main__":
-    print('Программа работает стабильно...')
-    main()
-    time.sleep(86400)
-
-
+    while True:
+        main()
+        wait_until_morning()

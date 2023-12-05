@@ -11,12 +11,12 @@ def test(message_):
 
 
 def check_message():
-    bot.send_message(674796107, f'Проверка')
+    bot.send_message(674796107, f'')
 
 
 def send_message(key, event):
     text, link = event[0], event[1]
-    bot.send_message(674796107, f'{key}\n {text}\n{link}')
+    bot.send_message(-2056827090, f'{key}\n {text}\n{link}')
 
 
 def error_message(site_name, error_name):
