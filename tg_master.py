@@ -17,7 +17,7 @@ def check_message():
 
 def send_message(key, event):
     text, link = event[0], event[1]
-    bot.send_message(-2056827090, f'{key}\n {text}\n{link}')
+    bot.send_message(-1002056827090, f'{key}\n {text}\n{link}')
 
 
 def error_message(site_name, error_name):

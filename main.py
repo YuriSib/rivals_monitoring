@@ -73,7 +73,6 @@ def main():
         error_message('epkferrum', e)
         print(e)
 
-
     dict_stock_current = {
         'flammen-gmbh.ru': flammen_gmbh_list, 'schmid.ru': schmid_list, 'moscow.kamin.ru': moscow_kamin_list,
         'schiedel.com.ru': schiedel_list, 'belfortkamin.ru': belfortkamin_list, 'lit_kom_list': lit_kom_list,
@@ -107,7 +106,7 @@ def wait_until_morning():
 
 if __name__ == "__main__":
     check_message()
-    # while True:
-    #     print('Итерация запущена!')
-    #     main()
-    #     wait_until_morning()
+    while True:
+        print('Итерация запущена!')
+        wait_until_morning()
+        main()
