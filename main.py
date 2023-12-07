@@ -16,7 +16,6 @@ def main():
     else:
         dict_stock = {}
 
-
     try:
         moscow_kamin_list = moscow_kamin_scr()
     except Exception as e:
@@ -105,7 +104,7 @@ def wait_until_morning():
 
 
 if __name__ == "__main__":
-    # check_message()
+    check_message()
     while True:
         print(f'''Итерация запущена! {time.strftime('%X')}''')
         wait_until_morning()
