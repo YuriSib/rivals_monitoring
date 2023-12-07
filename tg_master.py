@@ -21,5 +21,6 @@ def send_message(key, event):
 
 
 def error_message(site_name, error_name):
-    bot.send_message(674796107, f'При парсинге {site_name} произошла ошибка: \n {error_name}')
+    bot.send_message(319503984, f'При парсинге {site_name} произошла ошибка: \n {error_name}')
+    bot.send_message(1520999351, f'При парсинге {site_name} произошла ошибка: \n {error_name}')
 
