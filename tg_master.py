@@ -12,7 +12,8 @@ def test(message_):
 
 def check_message():
     # bot.send_message(-1002049731505, f'Проверка')
-    bot.send_message(674796107, f'Проверка')
+    bot.send_message(319503984, f'Бот запущен.')
+    bot.send_message(1520999351, f'Бот запущен.')
 
 
 def send_message(key, event):
