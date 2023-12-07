@@ -96,17 +96,18 @@ def main():
 
 
 def wait_until_morning():
-    current_time = datetime.datetime.now()
-    target_time = datetime.datetime(current_time.year, current_time.month, current_time.day, 9, 0, 0)
+    current_time = time.strftime('%X').split(':')[0]
+    target_time = '09'
 
-    while current_time < target_time:
-        current_time = datetime.datetime.now()
+    while current_time != target_time:
+        current_time = time.strftime('%X').split(':')[0]
         time.sleep(30)
 
 
 if __name__ == "__main__":
     check_message()
     while True:
-        print('Итерация запущена!')
+        print(f'Итерация запущена! {datetime.datetime.now()}')
         wait_until_morning()
         main()
+        time.sleep(3600)
