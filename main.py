@@ -107,6 +107,7 @@ if __name__ == "__main__":
     check_message()
     while True:
         print(f'''Итерация запущена! {time.strftime('%X')}''')
+        check_message()
         wait_until_morning()
         main()
         time.sleep(3600)
