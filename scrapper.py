@@ -15,7 +15,7 @@ def settings(url_):
 
 def moscow_kamin_scr():
     soup = settings('https://moscow.kamin.ru/skidkiakcii/')
-    moscow_kamin_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='newsblock')
     for block in news_block:
@@ -27,14 +27,14 @@ def moscow_kamin_scr():
         text = date_start + ' ' + date_finish + ' ' + name + ' ' + description
         link = 'https://moscow.kamin.ru' + block.find('div', {'class': 'newsfromdatemarg'}).a['href']
 
-        moscow_kamin_list.append([text, link])
+        news_list.append([text, link])
 
-    return moscow_kamin_list
+    return news_list
 
 
 def flammen_gmbh_scr():
     soup = settings('https://flammen-gmbh.ru/news/')
-    flammen_gmbh_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='news-card')
     for block in news_block:
@@ -45,14 +45,14 @@ def flammen_gmbh_scr():
         text = date_ + ' ' + description_1 + ' ' + description_2
         link = 'https://flammen-gmbh.ru' + block.find('div', {'class': 'main-news-item'}).a['href']
 
-        flammen_gmbh_list.append([text, link])
+        news_list.append([text, link])
 
-    return flammen_gmbh_list
+    return news_list
 
 
 def schmid_scr():
     soup = settings('https://schmid.ru/action/')
-    schmid_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='block1200')
     for block in news_block:
@@ -62,9 +62,9 @@ def schmid_scr():
         text = name + ' ' + description
         link = 'https://schmid.ru' + block.find('div', {'class': 'news-list'}).a['href']
 
-        schmid_list.append([text, link])
+        news_list.append([text, link])
 
-    return schmid_list
+    return news_list
 
 
 def schiedel_settings():
@@ -108,21 +108,21 @@ def schiedel_settings():
 
 def schiedel_scr():
     soup = schiedel_settings()
-    schiedel_list = []
+    news_list = []
 
     news_block = soup.find_all('article', class_='mk-blog-modern-item')
     for block in news_block:
         text = block.find('h3', {'class': 'the-title'}).get_text(strip=True)
         link = block.find('h3', {'class': 'the-title'}).a['href']
 
-        schiedel_list.append([text, link])
+        news_list.append([text, link])
 
-    return schiedel_list
+    return news_list
 
 
 def belfortkamin_scr():
     soup = settings('https://belfortkamin.ru/news/')
-    belfortkamin_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='post')
     for block in news_block:
@@ -131,14 +131,14 @@ def belfortkamin_scr():
 
         link = block.find('h3').a['href']
 
-        belfortkamin_list.append([text, link])
+        news_list.append([text, link])
 
-    return belfortkamin_list
+    return news_list
 
 
 def lit_kom_scr():
     soup = settings('https://lit-kom.ru/news/')
-    lit_kom_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='ty-blog__item')
     for block in news_block:
@@ -150,14 +150,14 @@ def lit_kom_scr():
         text = date + ' ' + name + ' ' + description
         link = block.find('div', class_='ty-blog__read-more').a['href']
 
-        lit_kom_list.append([text, link])
+        news_list.append([text, link])
 
-    return lit_kom_list
+    return news_list
 
 
 def ecokamin_scr():
     soup = settings('https://www.ecokamin.ru/novosti/')
-    ecokamin_list = []
+    news_list = []
 
     html_news_block = soup.find('div', class_='items row')
     news_block = html_news_block.find_all('div', class_='col-md-12')
@@ -170,14 +170,14 @@ def ecokamin_scr():
         text = date + ' ' + name + ' ' + description
         link = 'https://www.ecokamin.ru' + block.find('div', class_='link-block-more').a['href']
 
-        ecokamin_list.append([text, link])
+        news_list.append([text, link])
 
-    return ecokamin_list
+    return news_list
 
 
 def kamin_sklad_scr():
     soup = settings('https://kamin-sklad.ru/news/')
-    kamin_sklad_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='item clearfix item_block')
     for block in news_block:
@@ -188,28 +188,28 @@ def kamin_sklad_scr():
         text = date + ' ' + name + ' ' + html_desc
         link = 'https://kamin-sklad.ru' + block.find('div', class_='item-title').a['href']
 
-        kamin_sklad_list.append([text, link])
+        news_list.append([text, link])
 
-    return kamin_sklad_list
+    return news_list
 
 
 def easysteam_scr():
     soup = settings('https://easysteam.ru/news')
-    easysteam_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='col-12 col-md-6 col-lg-4 mb-4 mb-sm-5')
     for block in news_block:
         text = block.find('div', class_='news-card__description').get_text(strip=True)
         link = block.a['href']
 
-        easysteam_list.append([text, link])
+        news_list.append([text, link])
 
-    return easysteam_list
+    return news_list
 
 
 def prometall_scr():
     soup = settings('https://prometall.ru/actions')
-    prometall_list = []
+    news_list = []
 
     news_block = soup.find_all('div', class_='t686')
     for block in news_block:
@@ -219,9 +219,9 @@ def prometall_scr():
         text = name + ' ' + description
         link = 'https://prometall.ru/' + block.find('div', class_='t-card__title t-title t-title_xxs').a['href']
 
-        prometall_list.append([text, link])
+        news_list.append([text, link])
 
-    return prometall_list
+    return news_list
 
 
 def pkferrum_settings():
@@ -269,5 +269,187 @@ def pkferrum_scr():
     return pkferrum_list
 
 
+def dantexgroup_scr():
+    soup = settings("https://dantexgroup.ru/about/news/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='box')
+    for block in news_blocks:
+        date = block.find('span', class_='date').get_text(strip=True)
+        name = block.find('h3').get_text(strip=True)
+        link = 'https://dantexgroup.ru' + block.find('h3').a['href']
+        description = block.find('p').get_text(strip=True)
+
+        text = date + ' ' + name + ' ' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def t_m_f_scr():
+    soup = settings("https://t-m-f.ru/company/news/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='item clearfix item_block')
+    for block in news_blocks:
+        name = block.find('div', class_='item-title').get_text(strip=True)
+        link = 'https://t-m-f.ru' + block.find('div', class_='item-title').a['href']
+        description = block.find('div', class_='preview-text').get_text(strip=True)
+
+        text = name + ' ' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def kamin_scr():
+    soup = settings("https://kamin.ru/skidkiakcii/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='newsblock')
+    for block in news_blocks:
+        date_start = block.find('span', class_='dateofnews').get_text(strip=True).replace('от', 'от ').replace('202', ' 202')
+        date_finish = block.find('span', class_='end_dateofnews').get_text(strip=True).replace('до', 'до ').replace('202', ' 202')
+        link = 'https://kamin.ru' + block.find('h3').a['href']
+        description = block.find('div', class_='newsfromdatemarg').get_text(strip=True)
+
+        text = date_start + ' ' + date_finish + ' ' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def saunaru_scr():
+    soup = settings("https://saunaru.com/collection/frontpage")
+    news_list = []
+
+    news_blocks = soup.find_all('form', class_='product-preview')
+    for block in news_blocks:
+        description = block.find('div', class_='product-preview__title').get_text(strip=True)
+        link = 'https://saunaru.com' + block.find('div', class_='product-preview__title').a['href']
+
+        html_price = block.find('div', class_='product-preview__price')
+        html_old_price = html_price.find('span', class_='product-preview__price-old')
+        old_price = 'Цена до акции: ' + html_old_price.get_text(strip=True) if html_old_price else ''
+        html_cur_price = html_price.find('span', class_='product-preview__price-cur')
+        cur_price = 'Цена с акцией: ' + html_cur_price.get_text(strip=True) if html_cur_price else ''
+
+        text = description + ' ' + old_price + ' ' + cur_price
+
+        news_list.append([text, link])
+    return news_list
+
+
+def only_scr():
+    soup = settings("https://www.only.ru/company/novosti/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='articles')
+    for block in news_blocks:
+        name = block.find('div', class_='article_item').get_text(strip=True)
+        link = 'https://www.only.ru' + block.find('div', class_='article_item').a['href']
+        description = block.find('div', class_='summary').get_text(strip=True)
+
+        text = name + ' ' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def contactplus_scr():
+    soup = settings("https://contactplus.ru/company/news/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='news-item')
+    for block in news_blocks:
+        day = block.find('span', class_='news-date-day').get_text(strip=True)
+        month = block.find('span', class_='news-date-my').get_text(strip=True)
+        description = block.find('div', class_='news-desc').get_text(strip=True)
+        link = 'Нет ссылки'
+
+        text = day + ' ' + month + '\n' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def kaminmeta_scr():
+    soup = settings("https://www.kaminmeta.ru/akzii/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='action-item c_fix')
+    for block in news_blocks:
+        name = block.find('div', class_='action-item-dsc').find('a', class_='action-item-title').get_text(strip=True)
+        html_date = block.find('div', class_='action-item-dsc').find('div', class_='action-item-date')
+        date = html_date.get_text(strip=True) if html_date else ''
+        link = 'https://www.kaminmeta.ru' + block.find('div', class_='action-item-dsc').a['href']
+
+        text = date + '\n' + name
+        news_list.append([text, link])
+    return news_list
+
+
+def feringer_scr():
+    soup = settings("https://www.feringer.ru/aktsii/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='col-md-6')
+    for block in news_blocks:
+        date = block.find('div', class_='stocks-item__date').get_text(strip=True)
+        description = block.find('div', class_='stocks-item__name').get_text(strip=True)
+        link = 'https://www.feringer.ru' + block.find('div', class_='stocks-item__content').a['href']
+
+        text = date + '\n' + description
+
+        news_list.append([text, link])
+
+    soup_2 = settings("https://www.feringer.ru/articles/")
+
+    news_blocks_2 = soup_2.find_all('div', class_='article_item')
+    for block_2 in news_blocks_2:
+        date_2 = block_2.find('p', class_='date_articles').get_text(strip=True)
+        name_2 = block_2.find('a').get_text(strip=True)
+        description_2 = block_2.find('div', class_='description_article').get_text(strip=True)
+        link_2 = 'https://www.feringer.ru' + block_2.a['href']
+
+        text_2 = date_2 + '\n' + ' ' + name_2 + ' ' + description_2
+
+        news_list.append([text_2, link_2])
+    return news_list
+
+
+def gefestgroup_scr():
+    soup = settings("https://gefestgroup.ru/news/")
+    news_list = []
+
+    news_blocks = soup.find_all('div', class_='b-post-wrapper')
+    for block in news_blocks:
+        date = block.find('p', class_='font-size-xs mb-0 ml-auto text-white-70').get_text(strip=True)
+        name = block.find('div', class_='b-post-name h4 text-white').get_text(strip=True)
+        description = block.find('p', class_='mb-0 font-size-sm text-white').get_text(strip=True)
+        link = block.a['href']
+
+        text = date + '\n' + name + ' ' + description
+
+        news_list.append([text, link])
+    return news_list
+
+
+def evrokamin_scr():
+    soup = settings("https://www.evrokamin.ru/sale/")
+    news_list = []
+
+    news_blocks = soup.find('div', class_='items row').find_all('div', class_='col-md-12')
+    for block in news_blocks:
+        date = block.find('div', class_='period').get_text(strip=True)
+        name = block.find('div', class_='title').get_text(strip=True)
+        link = 'https://www.evrokamin.ru' + block.find('div', class_='title').a['href']
+
+        text = date + '\n' + name
+
+        news_list.append([text, link])
+    return news_list
+
+
 if __name__ == "__main__":
-    pkferrum_scr()
+    evrokamin_scr()
