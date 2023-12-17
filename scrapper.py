@@ -451,5 +451,21 @@ def evrokamin_scr():
     return news_list
 
 
+# def evrokamin_scr():
+#     soup = settings("https://www.evrokamin.ru/sale/")
+#     news_list = []
+#
+#     news_blocks = soup.find('div', class_='items row').find_all('div', class_='col-md-12')
+#     for block in news_blocks:
+#         date = block.find('div', class_='period').get_text(strip=True)
+#         name = block.find('div', class_='title').get_text(strip=True)
+#         link = 'https://www.evrokamin.ru' + block.find('div', class_='title').a['href']
+#
+#         text = date + '\n' + name
+#
+#         news_list.append([text, link])
+#     return news_list
+
+
 if __name__ == "__main__":
     evrokamin_scr()

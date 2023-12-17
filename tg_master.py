@@ -11,7 +11,7 @@ def test(message_):
 
 
 def check_message():
-    # bot.send_message(-1002049731505, f'Проверка')
+    bot.send_message(-1002049731505, f'Проверка')
     # bot.send_message(319503984, f'Бот запущен.')
     # bot.send_message(1520999351, f'Бот запущен.')
     pass
@@ -19,7 +19,8 @@ def check_message():
 
 def send_message(key, event):
     text, link = event[0], event[1]
-    bot.send_message(-1002056827090, f'{key}\n {text}\n{link}')
+    # bot.send_message(-1002056827090, f'{key}\n {text}\n{link}')
+    bot.send_message(-1002049731505, f'{key}\n {text}\n{link}')
 
 
 def error_message(site_name, error_name):
