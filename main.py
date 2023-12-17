@@ -110,4 +110,4 @@ if __name__ == "__main__":
         # wait_until_morning()
         # main()
         check_message()
-        time.sleep(2)
+        time.sleep(30)
